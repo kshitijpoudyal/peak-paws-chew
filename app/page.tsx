@@ -1,3 +1,5 @@
+'use client';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
@@ -142,17 +144,81 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="text-4xl font-bold text-amber-900 mb-8">
+      <section id="contact" className="py-20 bg-amber-50">
+        <div className="container mx-auto px-4">
+          <h3 className="text-4xl font-bold text-amber-900 text-center mb-8">
             Get in Touch
           </h3>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
             Have questions about our Himalayan Yack Chews? We'd love to hear from you!
           </p>
-          <button className="bg-amber-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-amber-700 transition-colors">
-            Contact Us
-          </button>
+          <div className="max-w-2xl mx-auto">
+            <form 
+              action="mailto:info@peakpawschew.com" 
+              method="POST" 
+              encType="text/plain"
+              className="bg-white p-8 rounded-xl shadow-lg space-y-6"
+            >
+              <div>
+                <label htmlFor="name" className="block text-sm font-semibold text-amber-900 mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full px-4 py-3 border border-amber-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-amber-900"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold text-amber-900 mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full px-4 py-3 border border-amber-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-amber-900"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="subject" className="block text-sm font-semibold text-amber-900 mb-2">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  className="w-full px-4 py-3 border border-amber-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-amber-900"
+                  placeholder="What's this about?"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-semibold text-amber-900 mb-2">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={6}
+                  className="w-full px-4 py-3 border border-amber-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent resize-none text-amber-900"
+                  placeholder="Tell us what's on your mind..."
+                ></textarea>
+              </div>
+              <button 
+                type="submit"
+                className="w-full bg-amber-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-amber-700 transition-colors"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
       </section>
 
