@@ -16,7 +16,7 @@ export default function Home() {
       {/* Main Hero */}
       <section className="container mx-auto px-4 py-20 text-center">
         <h2 className="text-6xl font-bold text-amber-900 mb-6">
-          Premium Himalayan Yack Chew
+          Authentic Himalayan Recipe
         </h2>
         <p className="text-2xl text-amber-700 mb-8 max-w-3xl mx-auto">
           Natural, Long-Lasting Dog Chews from the Himalayas
@@ -25,9 +25,6 @@ export default function Home() {
           Give your dog the gift of authentic Himalayan yak cheese chews - 100% natural, 
           grain-free, and packed with protein for hours of healthy chewing enjoyment.
         </p>
-        <button className="bg-amber-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-amber-700 transition-colors">
-          Shop Now
-        </button>
       </section>
 
       {/* About Section */}
