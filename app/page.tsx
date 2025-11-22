@@ -34,8 +34,18 @@ export default function Home() {
       <section id="about" className="bg-white py-20">
         <div className="container mx-auto px-4">
           <h3 className="text-4xl font-bold text-amber-900 text-center mb-12">
-            What Makes Our Chews Special
+            The Peak Promise
           </h3>
+          <div className="max-w-4xl mx-auto mb-16">
+            <p className="text-lg text-gray-700 leading-relaxed text-center italic">
+              "Crafted from an ancient recipe, our Himalayan Yak Chews are made using traditional 
+              methods in the pristine foothills of the Himalayas. We use 100% natural ingredients, 
+              primarily yak and cow milk, with a dash of lime juice and a pinch of salt to coagulate 
+              the milk. These chews are sun dried and smoke cured for weeks, resulting in a hard, 
+              flavourful, and long lasting, satisfying treat that connects your cherished companion 
+              to the spirit of the world's highest peaks."
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="text-center p-6">
               <div className="text-5xl mb-4">🏔️</div>
