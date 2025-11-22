@@ -8,6 +8,7 @@ export default function Home() {
           <div className="space-x-6">
             <a href="#about" className="text-amber-800 hover:text-amber-600">About</a>
             <a href="#benefits" className="text-amber-800 hover:text-amber-600">Benefits</a>
+            <a href="#shop" className="text-amber-800 hover:text-amber-600">Shop</a>
             <a href="#contact" className="text-amber-800 hover:text-amber-600">Contact</a>
           </div>
         </nav>
@@ -92,6 +93,50 @@ export default function Home() {
               <h4 className="text-xl font-bold text-amber-800 mb-2">Low Odor</h4>
               <p className="text-gray-600">No unpleasant smells in your home</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Shop Section */}
+      <section id="shop" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h3 className="text-4xl font-bold text-amber-900 text-center mb-8">
+            Where to Buy
+          </h3>
+          <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            Find our Himalayan Yack Chews at your favorite pet retailers
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <a 
+              href="https://www.amazon.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-gradient-to-br from-amber-100 to-amber-50 p-8 rounded-xl text-center hover:shadow-lg transition-all border-2 border-amber-200 hover:border-amber-400"
+            >
+              <div className="text-5xl mb-4">📦</div>
+              <h4 className="text-2xl font-bold text-amber-900 mb-2">Amazon</h4>
+              <p className="text-amber-700">Shop on Amazon</p>
+            </a>
+            <a 
+              href="https://www.chewy.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-gradient-to-br from-amber-100 to-amber-50 p-8 rounded-xl text-center hover:shadow-lg transition-all border-2 border-amber-200 hover:border-amber-400"
+            >
+              <div className="text-5xl mb-4">🐾</div>
+              <h4 className="text-2xl font-bold text-amber-900 mb-2">Chewy</h4>
+              <p className="text-amber-700">Shop on Chewy</p>
+            </a>
+            <a 
+              href="https://www.kiwipets.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-gradient-to-br from-amber-100 to-amber-50 p-8 rounded-xl text-center hover:shadow-lg transition-all border-2 border-amber-200 hover:border-amber-400"
+            >
+              <div className="text-5xl mb-4">🥝</div>
+              <h4 className="text-2xl font-bold text-amber-900 mb-2">Kiwi Pets</h4>
+              <p className="text-amber-700">Shop on Kiwi Pets</p>
+            </a>
           </div>
         </div>
       </section>
