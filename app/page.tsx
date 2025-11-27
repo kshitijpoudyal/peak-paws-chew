@@ -61,7 +61,7 @@ export default function Home() {
               <div className="text-5xl mb-4">🌱</div>
               <h4 className="text-xl font-bold text-amber-800 mb-3">100% Natural</h4>
               <p className="text-gray-600">
-                No artificial preservatives, colors, or flavors. Just pure yak cheese goodness.
+                Made from Milk, Salt and Lime only. No artificial preservatives, colors, or flavors.
               </p>
             </div>
             <div className="text-center p-6">
