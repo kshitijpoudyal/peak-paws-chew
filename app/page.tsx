@@ -10,6 +10,7 @@ export default function Home() {
           <div className="space-x-6">
             <a href="#about" className="text-amber-800 hover:text-amber-600">About</a>
             <a href="#benefits" className="text-amber-800 hover:text-amber-600">Benefits</a>
+            <a href="#products" className="text-amber-800 hover:text-amber-600">Products</a>
             <a href="#shop" className="text-amber-800 hover:text-amber-600">Shop</a>
             <a href="#contact" className="text-amber-800 hover:text-amber-600">Contact</a>
           </div>
@@ -99,8 +100,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Our Products Section */}
+      <section id="products" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h3 className="text-4xl font-bold text-amber-900 text-center mb-8">
+            Our Products
+          </h3>
+          <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            Choose the perfect size for your furry friend
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Small */}
+            <a 
+              href="#shop"
+              className="group cursor-pointer"
+            >
+              <div className="bg-gradient-to-br from-amber-50 to-white p-8 rounded-xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl transition-all">
+                <div className="aspect-square bg-amber-100 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
+                  <div className="text-8xl">📏</div>
+                </div>
+                <h4 className="text-2xl font-bold text-amber-900 text-center mb-2">Small</h4>
+                <p className="text-gray-600 text-center">Perfect for small dogs and puppies</p>
+              </div>
+            </a>
+
+            {/* Medium */}
+            <a 
+              href="#shop"
+              className="group cursor-pointer"
+            >
+              <div className="bg-gradient-to-br from-amber-50 to-white p-8 rounded-xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl transition-all">
+                <div className="aspect-square bg-amber-100 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
+                  <div className="text-8xl">📐</div>
+                </div>
+                <h4 className="text-2xl font-bold text-amber-900 text-center mb-2">Medium</h4>
+                <p className="text-gray-600 text-center">Ideal for medium-sized dogs</p>
+              </div>
+            </a>
+
+            {/* Large */}
+            <a 
+              href="#shop"
+              className="group cursor-pointer"
+            >
+              <div className="bg-gradient-to-br from-amber-50 to-white p-8 rounded-xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl transition-all">
+                <div className="aspect-square bg-amber-100 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
+                  <div className="text-8xl">📊</div>
+                </div>
+                <h4 className="text-2xl font-bold text-amber-900 text-center mb-2">Large</h4>
+                <p className="text-gray-600 text-center">Great for large dogs</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Shop Section */}
-      <section id="shop" className="py-20 bg-white">
+      <section id="shop" className="py-20 bg-amber-50">
         <div className="container mx-auto px-4">
           <h3 className="text-4xl font-bold text-amber-900 text-center mb-8">
             Where to Buy
