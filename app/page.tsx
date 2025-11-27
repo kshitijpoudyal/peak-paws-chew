@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
@@ -80,21 +82,33 @@ export default function Home() {
             Health Benefits
           </h3>
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-bold text-amber-800 mb-2">High in Protein</h4>
-              <p className="text-gray-600">Supports strong muscles and overall health</p>
+            <div className="bg-white p-6 rounded-lg shadow-sm flex items-start gap-4">
+              <div className="text-4xl flex-shrink-0">💪</div>
+              <div>
+                <h4 className="text-xl font-bold text-amber-800 mb-2">High in Protein</h4>
+                <p className="text-gray-600">Supports strong muscles and overall health</p>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-bold text-amber-800 mb-2">Dental Health</h4>
-              <p className="text-gray-600">Helps clean teeth and reduce plaque buildup</p>
+            <div className="bg-white p-6 rounded-lg shadow-sm flex items-start gap-4">
+              <div className="text-4xl flex-shrink-0">🦷</div>
+              <div>
+                <h4 className="text-xl font-bold text-amber-800 mb-2">Dental Health</h4>
+                <p className="text-gray-600">Helps clean teeth and reduce plaque buildup</p>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-bold text-amber-800 mb-2">Grain & Gluten Free</h4>
-              <p className="text-gray-600">Perfect for dogs with sensitivities</p>
+            <div className="bg-white p-6 rounded-lg shadow-sm flex items-start gap-4">
+              <div className="text-4xl flex-shrink-0">🌾</div>
+              <div>
+                <h4 className="text-xl font-bold text-amber-800 mb-2">Grain & Gluten Free</h4>
+                <p className="text-gray-600">Perfect for dogs with sensitivities</p>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h4 className="text-xl font-bold text-amber-800 mb-2">Low Odor</h4>
-              <p className="text-gray-600">No unpleasant smells in your home</p>
+            <div className="bg-white p-6 rounded-lg shadow-sm flex items-start gap-4">
+              <div className="text-4xl flex-shrink-0">✨</div>
+              <div>
+                <h4 className="text-xl font-bold text-amber-800 mb-2">Easily Digestible</h4>
+                <p className="text-gray-600">Gentle on your dog's stomach and easy to digest</p>
+              </div>
             </div>
           </div>
         </div>
@@ -115,12 +129,19 @@ export default function Home() {
               href="#shop"
               className="group cursor-pointer"
             >
-              <div className="bg-gradient-to-br from-amber-50 to-white p-8 rounded-xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl transition-all">
-                <div className="aspect-square bg-amber-100 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
-                  <div className="text-8xl">📏</div>
+              <div className="rounded-xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl transition-all overflow-hidden">
+                <div className="aspect-square relative">
+                  <Image 
+                    src="/products/small.jpeg" 
+                    alt="Small Size Himalayan Yak Chew - Up to 15 lbs" 
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h4 className="text-2xl font-bold text-amber-900 text-center mb-2">Small</h4>
-                <p className="text-gray-600 text-center">Perfect for small dogs and puppies</p>
+                <div className="p-4 bg-white">
+                  <h4 className="text-2xl font-bold text-amber-900 text-center mb-2">Small</h4>
+                  <p className="text-gray-600 text-center">Perfect for small dogs up to 15 lbs</p>
+                </div>
               </div>
             </a>
 
@@ -129,12 +150,19 @@ export default function Home() {
               href="#shop"
               className="group cursor-pointer"
             >
-              <div className="bg-gradient-to-br from-amber-50 to-white p-8 rounded-xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl transition-all">
-                <div className="aspect-square bg-amber-100 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
-                  <div className="text-8xl">📐</div>
+              <div className="rounded-xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl transition-all overflow-hidden">
+                <div className="aspect-square relative">
+                  <Image 
+                    src="/products/medium.jpeg" 
+                    alt="Medium Size Himalayan Yak Chew - 15-55 lbs" 
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h4 className="text-2xl font-bold text-amber-900 text-center mb-2">Medium</h4>
-                <p className="text-gray-600 text-center">Ideal for medium-sized dogs</p>
+                <div className="p-4 bg-white">
+                  <h4 className="text-2xl font-bold text-amber-900 text-center mb-2">Medium</h4>
+                  <p className="text-gray-600 text-center">Ideal for dogs 15-55 lbs</p>
+                </div>
               </div>
             </a>
 
@@ -143,12 +171,19 @@ export default function Home() {
               href="#shop"
               className="group cursor-pointer"
             >
-              <div className="bg-gradient-to-br from-amber-50 to-white p-8 rounded-xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl transition-all">
-                <div className="aspect-square bg-amber-100 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
-                  <div className="text-8xl">📊</div>
+              <div className="rounded-xl border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl transition-all overflow-hidden">
+                <div className="aspect-square relative">
+                  <Image 
+                    src="/products/large.jpeg" 
+                    alt="Large Size Himalayan Yak Chew - 55+ lbs" 
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <h4 className="text-2xl font-bold text-amber-900 text-center mb-2">Large</h4>
-                <p className="text-gray-600 text-center">Great for large dogs</p>
+                <div className="p-4 bg-white">
+                  <h4 className="text-2xl font-bold text-amber-900 text-center mb-2">Large</h4>
+                  <p className="text-gray-600 text-center">Great for dogs 55+ lbs</p>
+                </div>
               </div>
             </a>
           </div>
