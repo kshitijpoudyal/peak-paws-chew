@@ -377,19 +377,6 @@ export default function Home() {
                 />
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-semibold text-amber-900 mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  className="w-full px-4 py-3 border border-amber-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-amber-900"
-                  placeholder="What's this about?"
-                />
-              </div>
-              <div>
                 <label htmlFor="message" className="block text-sm font-semibold text-amber-900 mb-2">
                   Message
                 </label>
