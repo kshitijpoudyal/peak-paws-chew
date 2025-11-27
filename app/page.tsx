@@ -1,22 +1,87 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
       {/* Hero Section */}
       <header className="container mx-auto px-4 py-8">
         <nav className="flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-amber-900">Himalayan Yack Chew</h1>
-          <div className="space-x-6">
+          <div className="flex items-center gap-3">
+            <Image 
+              src="/logo.png" 
+              alt="Peak Paws Logo" 
+              width={180}
+              height={60}
+              className="object-contain"
+            />
+          </div>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-6">
             <a href="#about" className="text-amber-800 hover:text-amber-600">About</a>
             <a href="#benefits" className="text-amber-800 hover:text-amber-600">Benefits</a>
             <a href="#products" className="text-amber-800 hover:text-amber-600">Products</a>
             <a href="#shop" className="text-amber-800 hover:text-amber-600">Shop</a>
             <a href="#contact" className="text-amber-800 hover:text-amber-600">Contact</a>
           </div>
+
+          {/* Mobile Hamburger Button */}
+          <button 
+            className="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`block h-0.5 w-6 bg-amber-900 transition-transform ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-amber-900 transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-amber-900 transition-transform ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          </button>
         </nav>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg border border-amber-200">
+            <a 
+              href="#about" 
+              className="block px-6 py-3 text-amber-800 hover:bg-amber-50 hover:text-amber-600"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </a>
+            <a 
+              href="#benefits" 
+              className="block px-6 py-3 text-amber-800 hover:bg-amber-50 hover:text-amber-600"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Benefits
+            </a>
+            <a 
+              href="#products" 
+              className="block px-6 py-3 text-amber-800 hover:bg-amber-50 hover:text-amber-600"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Products
+            </a>
+            <a 
+              href="#shop" 
+              className="block px-6 py-3 text-amber-800 hover:bg-amber-50 hover:text-amber-600"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Shop
+            </a>
+            <a 
+              href="#contact" 
+              className="block px-6 py-3 text-amber-800 hover:bg-amber-50 hover:text-amber-600"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </a>
+          </div>
+        )}
       </header>
 
       {/* Main Hero */}
