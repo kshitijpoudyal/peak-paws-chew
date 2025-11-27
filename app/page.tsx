@@ -5,6 +5,37 @@ import { useState } from 'react';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "8d78df7d-6d79-4878-8a6b-ea0cbfc2c579");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+        e.currentTarget.reset();
+      } else {
+        setSubmitStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
+      }
+    } catch (error) {
+      setSubmitStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
@@ -310,11 +341,15 @@ export default function Home() {
           </p>
           <div className="max-w-2xl mx-auto">
             <form 
-              action="mailto:info@peakpawschew.com" 
-              method="POST" 
-              encType="text/plain"
+              onSubmit={handleSubmit}
               className="bg-white p-8 rounded-xl shadow-lg space-y-6"
             >
+              <input type="hidden" name="redirect" value="false" />
+              {submitStatus && (
+                <div className={`p-4 rounded-lg ${submitStatus.type === 'success' ? 'bg-green-50 text-green-800 border border-green-200' : 'bg-red-50 text-red-800 border border-red-200'}`}>
+                  {submitStatus.message}
+                </div>
+              )}
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-amber-900 mb-2">
                   Name
@@ -369,9 +404,10 @@ export default function Home() {
               </div>
               <button 
                 type="submit"
-                className="w-full bg-amber-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-amber-700 transition-colors"
+                disabled={isSubmitting}
+                className="w-full bg-amber-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-amber-700 transition-colors disabled:bg-amber-400 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
