@@ -14,7 +14,7 @@ export default function Home() {
     setSubmitStatus(null);
 
     const formData = new FormData(e.currentTarget);
-    formData.append("access_key", "8d78df7d-6d79-4878-8a6b-ea0cbfc2c579");
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
