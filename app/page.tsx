@@ -39,26 +39,42 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
-      {/* Hero Section */}
-      <header className="container mx-auto px-4 py-8">
-        <nav className="flex justify-between items-center">
+      {/* Hero Section with Video */}
+      <div className="relative overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Overlay */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black/30"></div>
+
+        {/* Header/Nav */}
+        <header className="relative container mx-auto px-4 py-8 z-10">
+          <nav className="flex justify-between items-center">
           <div className="flex items-center gap-3">
             <Image 
               src="/logo.png" 
               alt="Peak Paws Logo" 
               width={180}
               height={60}
-              className="object-contain"
+              className="object-contain drop-shadow-lg"
             />
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
-            <a href="#about" className="text-amber-800 hover:text-amber-600">About</a>
-            <a href="#benefits" className="text-amber-800 hover:text-amber-600">Benefits</a>
-            <a href="#products" className="text-amber-800 hover:text-amber-600">Products</a>
-            <a href="#shop" className="text-amber-800 hover:text-amber-600">Shop</a>
-            <a href="#contact" className="text-amber-800 hover:text-amber-600">Contact</a>
+            <a href="#about" className="text-white hover:text-amber-200 font-semibold drop-shadow-lg">About</a>
+            <a href="#benefits" className="text-white hover:text-amber-200 font-semibold drop-shadow-lg">Benefits</a>
+            <a href="#products" className="text-white hover:text-amber-200 font-semibold drop-shadow-lg">Products</a>
+            <a href="#shop" className="text-white hover:text-amber-200 font-semibold drop-shadow-lg">Shop</a>
+            <a href="#contact" className="text-white hover:text-amber-200 font-semibold drop-shadow-lg">Contact</a>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -67,15 +83,15 @@ export default function Home() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            <span className={`block h-0.5 w-6 bg-amber-900 transition-transform ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`block h-0.5 w-6 bg-amber-900 transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`block h-0.5 w-6 bg-amber-900 transition-transform ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-white drop-shadow-lg transition-transform ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-white drop-shadow-lg transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-white drop-shadow-lg transition-transform ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
           </button>
         </nav>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg border border-amber-200">
+          <div className="relative md:hidden mt-4 py-4 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg border border-amber-200">
             <a 
               href="#about" 
               className="block px-6 py-3 text-amber-800 hover:bg-amber-50 hover:text-amber-600"
@@ -113,21 +129,22 @@ export default function Home() {
             </a>
           </div>
         )}
-      </header>
+        </header>
 
-      {/* Main Hero */}
-      <section className="container mx-auto px-4 py-20 text-center">
-        <h2 className="text-6xl font-bold text-amber-900 mb-6">
-          Authentic Himalayan Recipe
-        </h2>
-        <p className="text-2xl text-amber-700 mb-8 max-w-3xl mx-auto">
-          Natural, Long-Lasting Dog Chews from the Himalayas
-        </p>
-        <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-          Give your dog the gift of authentic Himalayan yak cheese chews - 100% natural, 
-          grain-free, and packed with protein for hours of healthy chewing enjoyment.
-        </p>
-      </section>
+        {/* Hero Content */}
+        <div className="relative container mx-auto px-4 py-20 text-center">
+          <h2 className="text-6xl font-bold text-white mb-6 drop-shadow-lg">
+            Authentic Himalayan Recipe
+          </h2>
+          <p className="text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg">
+            Natural, Long-Lasting Dog Chews from the Himalayas
+          </p>
+          <p className="text-lg text-white mb-12 max-w-2xl mx-auto drop-shadow-lg">
+            Give your dog the gift of authentic Himalayan yak cheese chews - 100% natural, 
+            grain-free, and packed with protein for hours of healthy chewing enjoyment.
+          </p>
+        </div>
+      </div>
 
       {/* About Section */}
       <section id="about" className="bg-white py-20">
